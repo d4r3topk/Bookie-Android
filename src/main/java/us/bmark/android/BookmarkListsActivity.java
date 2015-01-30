@@ -1,8 +1,16 @@
 package us.bmark.android;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
+import us.bmark.android.prefs.SettingsActivity;
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -13,13 +21,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 import android.widget.SearchView;
-
-import java.util.ArrayList;
-import java.util.Collection;
-
-import us.bmark.android.prefs.SettingsActivity;
 
 public class BookmarkListsActivity extends FragmentActivity {
 
@@ -31,7 +36,7 @@ public class BookmarkListsActivity extends FragmentActivity {
     private BookmarkListFragment allFragment;
     private SearchBookmarkFragment searchFragment;
     private ViewPager pager;
-
+    
     private ActionBar.TabListener tabListener = new ActionBar.TabListener() {
 
         @Override
@@ -51,7 +56,11 @@ public class BookmarkListsActivity extends FragmentActivity {
     };
     private MultiRefreshStateObserver observer;
     private BookmarkListsActivity.BookiePagerAdapter tabsPagerAdapter;
-
+    String id="something";
+    SharedPreferences settings;
+	Editor editor;
+    String col;
+    ActionBar actionBar;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,11 +68,21 @@ public class BookmarkListsActivity extends FragmentActivity {
         setContentView(R.layout.main);
         pager = (ViewPager) findViewById(R.id.pager);
         createFragments(savedInstanceState);
-
-        final ActionBar actionBar = getActionBar();
+        id = getIntent().getStringExtra("caller");
+        //Get Sharedpreferences
+        settings = getSharedPreferences("mypref", MODE_PRIVATE);
+        //Get editor
+        editor = settings.edit();
+        //always set col to the color saved last time user had chosen it(for the first time 1--dark)
+        col = settings.getString("mycolor", "1");
+        
+        actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(false);   // Hides the '<' button in the ActionBar
         actionBar.setHomeButtonEnabled(true);         // Enables the 'B' icon to be tappable on the list Activity
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        
+        //always change color to that.
+        ChangeColor(col);
 
         pager.setOnPageChangeListener(
                 new ViewPager.SimpleOnPageChangeListener() {
@@ -75,6 +94,25 @@ public class BookmarkListsActivity extends FragmentActivity {
                     }
                 });
 
+    }
+    //changing theme color of main
+    public void ChangeColor(String a){
+    	View v = findViewById(R.id.main);
+    	if(a.equals("1"))
+    	{
+    		v.setBackgroundColor(Color.BLACK);
+    		actionBar.setBackgroundDrawable(new ColorDrawable(Color.BLACK));
+    	}
+    	else if(a.equals("2"))
+    	{
+    		v.setBackgroundColor(Color.GRAY);
+    		actionBar.setBackgroundDrawable(new ColorDrawable(Color.GRAY));
+    	}
+    	else if(a.equals("3"))
+    	{
+    		v.setBackgroundColor(Color.TRANSPARENT);
+    		actionBar.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+    	}
     }
 
     @Override
@@ -209,7 +247,6 @@ public class BookmarkListsActivity extends FragmentActivity {
             return fragments[position];
         }
 
-        @Override
         public CharSequence getPageTitle(int position) {
             return getString(titleIds[position]);
         }
@@ -270,4 +307,5 @@ public class BookmarkListsActivity extends FragmentActivity {
                 (BookmarkListFragment) tabsPagerAdapter.getFragments()[pager.getCurrentItem()];
         activeFragment.refresh();
     }
+    
 }

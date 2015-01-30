@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Bookie</string>
+    <string name="fetch_all_bm">Fetching all Bookmarks"</string>
+    <string name="update_your_bm">Updating your Bookmarks</string>
+    <string name="please_enter">Please enter your username and API key in the Settings menu</string>
     <string name="generic_dialog_positive_button">OK</string>
     <string name="generic_dialog_cancel_button">Cancel</string>
     <string name="title_all">All</string>

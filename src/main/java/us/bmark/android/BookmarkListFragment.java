@@ -1,6 +1,21 @@
 package us.bmark.android;
 
+import static us.bmark.android.utils.Utils.isBlank;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+import us.bmark.android.R;
+import us.bmark.android.prefs.SharedPrefsBackedUserSettings;
+import us.bmark.android.utils.ErrorHandler;
+import us.bmark.android.utils.IntentConstants;
+import us.bmark.android.utils.JustDisplayToastErrorHandler;
 import android.app.Activity;
+
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -17,25 +32,12 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import retrofit.Callback;
-import retrofit.RestAdapter;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
-import us.bmark.android.prefs.SharedPrefsBackedUserSettings;
-import us.bmark.android.utils.ErrorHandler;
-import us.bmark.android.utils.IntentConstants;
-import us.bmark.android.utils.JustDisplayToastErrorHandler;
 import us.bmark.bookieclient.BookieService;
 import us.bmark.bookieclient.BookieServiceUtils;
 import us.bmark.bookieclient.Bookmark;
 import us.bmark.bookieclient.BookmarkList;
 
-import static us.bmark.android.utils.Utils.isBlank;
+import com.google.gson.Gson;
 
 public abstract class BookmarkListFragment extends ListFragment {
 
@@ -136,7 +138,7 @@ public abstract class BookmarkListFragment extends ListFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        settings = new SharedPrefsBackedUserSettings(getActivity());
+        settings = (UserSettings) new SharedPrefsBackedUserSettings(getActivity());
 
         String serverUrl = settings.getBaseUrl();
         RestAdapter restAdapter = new RestAdapter.Builder()
