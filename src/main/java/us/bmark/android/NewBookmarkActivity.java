@@ -1,5 +1,16 @@
-package us.bmark.android;
+package main.java.us.bmark.android;
 
+
+import org.jetbrains.annotations.NonNls;
+
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+import us.bmark.android.R;
+import us.bmark.android.prefs.SharedPrefsBackedUserSettings;
+import us.bmark.android.utils.ErrorHandler;
+import us.bmark.android.utils.JustDisplayToastErrorHandler;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,20 +24,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.jetbrains.annotations.NonNls;
-
-import retrofit.Callback;
-import retrofit.RestAdapter;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
-import us.bmark.android.prefs.SharedPrefsBackedUserSettings;
-import us.bmark.android.utils.ErrorHandler;
-import us.bmark.android.utils.JustDisplayToastErrorHandler;
-import us.bmark.bookieParserClient.BookeParserService.BookieParserService;
-import us.bmark.bookieParserClient.BookeParserService.ParseResponse;
-import us.bmark.bookieclient.BookieService;
-import us.bmark.bookieclient.NewBookmark;
-import us.bmark.bookieclient.NewBookmarkResponse;
+import bookieclient.BookieService;
+import bookieclient.NewBookmark;
+import bookieclient.NewBookmarkResponse;
+import bookieparserservice.BookieParserService;
+import bookieparserservice.ParseResponse;
 
 public class NewBookmarkActivity extends AbstractActivity {
 

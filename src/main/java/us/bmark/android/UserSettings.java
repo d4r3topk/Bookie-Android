@@ -1,4 +1,4 @@
-package us.bmark.android;
+package main.java.us.bmark.android;
 
 public interface UserSettings {
     public abstract String getUsername();

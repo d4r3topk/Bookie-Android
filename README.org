@@ -25,5 +25,25 @@
    Licensed under GPLv3.
    See the file COPYING, included with this source.
 
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+For Developers :
+---------------
+*** For building/running the project on eclipse/android studio, the following libraries have to be imported namely:
+
+android-support-v4-1.jar
+hamcrest-1.3.jar
+annotations-10.0.2.jar
+gson-2.2.2.jar
+retrofit-1.2.1.jar
+junit.jar
+jetbrains-annotations.jar
+
+*** For importing BookieClient API and BookieParserClient API, 	download the source projects from here: 
+
+https://github.com/bookieio/BookieClient
+https://github.com/bookieio/BookieParserClient
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
    

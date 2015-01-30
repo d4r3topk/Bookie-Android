@@ -46,5 +46,16 @@
             android:defaultValue="@string/settings_parseurl_defaultvalue"/>
 
     </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Theme"
+        android:key="theme">
+        <ListPreference 
+    		android:key="theme_preference"
+    		android:title="Choose your theme"
+    		android:entries="@array/backgroundColorEntries"
+   	 		android:entryValues="@array/backgroundValues"/>
+    	    
+        
+    </PreferenceCategory>
 
 </PreferenceScreen>

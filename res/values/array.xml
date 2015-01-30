@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="backgroundColorEntries">
+  	<item name="Dark">Dark</item>
+  	<item name="Light">Light</item>
+  	<item name="Transparent">Glass</item>
+  </string-array>
+   <string-array name="backgroundValues">
+  	<item name="Dark">1</item>
+  	<item name="Light">2</item>
+  	<item name="Transparent">3</item>
+  </string-array>
+</resources>

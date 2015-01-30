@@ -1,4 +1,4 @@
-package us.bmark.android.utils;
+package main.java.us.bmark.android.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -12,8 +12,8 @@ import org.jetbrains.annotations.NotNull;
 
 import retrofit.RetrofitError;
 import retrofit.client.Response;
-import us.bmark.android.R;
-import us.bmark.android.UserSettings;
+import main.java.us.bmark.android.R;
+import main.java.us.bmark.android.UserSettings;
 
 public class JustDisplayToastErrorHandler implements ErrorHandler {
 

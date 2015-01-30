@@ -1,4 +1,4 @@
-package us.bmark.android;
+package main.java.us.bmark.android;
 
 import android.app.Activity;
 import android.os.Bundle;

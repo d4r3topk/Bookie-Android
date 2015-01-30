@@ -1,10 +1,10 @@
-package us.bmark.android.prefs;
+package main.java.us.bmark.android.prefs;
 
+import main.java.us.bmark.android.UserSettings;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import us.bmark.android.UserSettings;
 
 public class SharedPrefsBackedUserSettings implements UserSettings {
     private static final String USER_PREFS_DEFAULT_USERNAME = "";

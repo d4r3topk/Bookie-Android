@@ -1,4 +1,4 @@
-package us.bmark.android.utils;
+package main.java.us.bmark.android.utils;
 
 import retrofit.RetrofitError;
 

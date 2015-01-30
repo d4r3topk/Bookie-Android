@@ -1,4 +1,4 @@
-package us.bmark.android;
+package main.java.us.bmark.android;
 
 import java.util.Collection;
 import java.util.HashSet;

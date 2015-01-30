@@ -1,5 +1,9 @@
-package us.bmark.android;
+package main.java.us.bmark.android;
 
+
+import main.java.us.bmark.android.R;
+import main.java.us.bmark.android.prefs.SharedPrefsBackedUserSettings;
+import main.java.us.bmark.android.utils.IntentConstants;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,10 +17,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 
-import us.bmark.android.prefs.SharedPrefsBackedUserSettings;
-import us.bmark.android.utils.IntentConstants;
-import us.bmark.bookieclient.Bookmark;
-import us.bmark.bookieclient.Tag;
+import bookieclient.Bookmark;
+import bookieclient.Tag;
 
 import static us.bmark.android.utils.Utils.equalButNotBlank;
 
@@ -46,6 +48,8 @@ public class BookMarkDetailActivity extends AbstractActivity {
             populateFields(bmark);
         } catch (JsonSyntaxException e) {
             Log.e(TAG, "Error getting bookmark detail", e);
+	    Toast.makeText(getActivity(),"Some error occured while fetching bookmark details" , 
+                Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -90,7 +94,7 @@ public class BookMarkDetailActivity extends AbstractActivity {
     }
 
     private UserSettings userSettings() {
-        return new SharedPrefsBackedUserSettings(this);
+        return (UserSettings) new SharedPrefsBackedUserSettings(this);
     }
 
 }

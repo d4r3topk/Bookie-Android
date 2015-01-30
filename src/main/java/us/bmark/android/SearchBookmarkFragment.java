@@ -1,4 +1,4 @@
-package us.bmark.android;
+package main.java.us.bmark.android;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,8 +11,9 @@ import java.net.URLEncoder;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
-import us.bmark.android.exception.UnsupportedPlatformException;
-import us.bmark.bookieclient.SearchResult;
+import main.java.us.bmark.android.exception.UnsupportedPlatformException;
+
+import bookieclient.SearchResult;
 
 public class SearchBookmarkFragment extends BookmarkListFragment {
     private static final String TAG = SearchBookmarkFragment.class.getName();
