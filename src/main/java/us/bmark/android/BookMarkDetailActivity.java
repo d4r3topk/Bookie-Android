@@ -1,9 +1,9 @@
-package main.java.us.bmark.android;
+package us.bmark.android;
 
 
-import main.java.us.bmark.android.R;
-import main.java.us.bmark.android.prefs.SharedPrefsBackedUserSettings;
-import main.java.us.bmark.android.utils.IntentConstants;
+import us.bmark.android.R;
+import us.bmark.android.prefs.SharedPrefsBackedUserSettings;
+import us.bmark.android.utils.IntentConstants;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,8 +17,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonSyntaxException;
 
-import bookieclient.Bookmark;
-import bookieclient.Tag;
+import us.bmark.bookieclient.Bookmark;
+import us.bmark.bookieclient.Tag;
 
 import static us.bmark.android.utils.Utils.equalButNotBlank;
 

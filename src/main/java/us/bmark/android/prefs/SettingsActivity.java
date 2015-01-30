@@ -1,7 +1,7 @@
-package main.java.us.bmark.android.prefs;
+package us.bmark.android.prefs;
 
-import main.java.us.bmark.android.BookmarkListsActivity;
-import main.java.us.bmark.android.R;
+import us.bmark.android.BookmarkListsActivity;
+import us.bmark.android.R;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;

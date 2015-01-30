@@ -1,4 +1,4 @@
-package main.java.us.bmark.android;
+package us.bmark.android;
 
 import static us.bmark.android.utils.Utils.isBlank;
 
@@ -9,11 +9,11 @@ import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
-import main.java.us.bmark.android.R;
-import main.java.us.bmark.android.prefs.SharedPrefsBackedUserSettings;
-import main.java.us.bmark.android.utils.ErrorHandler;
-import main.java.us.bmark.android.utils.IntentConstants;
-import main.java.us.bmark.android.utils.JustDisplayToastErrorHandler;
+import us.bmark.android.R;
+import us.bmark.android.prefs.SharedPrefsBackedUserSettings;
+import us.bmark.android.utils.ErrorHandler;
+import us.bmark.android.utils.IntentConstants;
+import us.bmark.android.utils.JustDisplayToastErrorHandler;
 import android.app.Activity;
 
 import android.content.Context;
@@ -32,10 +32,10 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import bookieclient.BookieService;
-import bookieclient.BookieServiceUtils;
-import bookieclient.Bookmark;
-import bookieclient.BookmarkList;
+import us.bmark.bookieclient.BookieService;
+import us.bmark.bookieclient.BookieServiceUtils;
+import us.bmark.bookieclient.Bookmark;
+import us.bmark.bookieclient.BookmarkList;
 
 import com.google.gson.Gson;
 

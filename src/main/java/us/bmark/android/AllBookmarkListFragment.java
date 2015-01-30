@@ -1,4 +1,4 @@
-package main.java.us.bmark.android;
+package us.bmark.android;
 
 import android.os.Bundle;
 import android.widget.Toast;

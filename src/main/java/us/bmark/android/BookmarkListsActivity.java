@@ -1,9 +1,9 @@
-package main.java.us.bmark.android;
+package us.bmark.android;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-import main.java.us.bmark.android.prefs.SettingsActivity;
+import us.bmark.android.prefs.SettingsActivity;
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.content.Intent;

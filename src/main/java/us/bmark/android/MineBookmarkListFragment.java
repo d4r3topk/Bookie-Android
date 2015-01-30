@@ -1,6 +1,6 @@
-package main.java.us.bmark.android;
+package us.bmark.android;
 
-import static main.java.us.bmark.android.utils.Utils.isBlank;
+import static us.bmark.android.utils.Utils.isBlank;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
